@@ -5,14 +5,14 @@ import "./App.css";
 function App() {
   const { VITE_CLOUDFARE_SITE_KEY } = import.meta.env || {};
 
-  const onCaptchaSuccess = () => {
-    console.log("Turnstile: Success.");
+  const onCaptchaSuccess = (token: string) => {
+    console.log("Turnstile: Success.", token);
 
     closeApp();
   };
 
-  const onCaptchaError = () => {
-    console.log("Turnstile: Error.");
+  const onCaptchaError = (e: any) => {
+    console.log("Turnstile: Error.", e);
 
     closeApp();
   };
